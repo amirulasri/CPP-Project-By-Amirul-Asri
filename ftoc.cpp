@@ -2,12 +2,22 @@
 using namespace std;
 
 int main (){
+    //DECLARE VARIABLE
     double fahrenheit, celsius;
 
-    cout<<"INPUT fahrenheit: ";
+    //MESSAGE FOR FAHRENHEIT INPUT
+    cout<<"Input a degree in Fahrenheit: ";
+
+    //INPUT FAHRENHEIT HERE
     cin>>fahrenheit;
 
+    //PROCESS CALCULATE FAHRENHEIT TO CELSIUS
     celsius = (5 * (fahrenheit - 32)) / 9;
 
-    cout<<"CELSIUS IS: "<<celsius;
+    //OUTPUT MESSAGE RESULT
+    cout<<fahrenheit<<" degree Fahrenheit is equal to "<<celsius<<" in Celsius" << endl;
+
+    system("pause");
+
+    return 0;
 }
