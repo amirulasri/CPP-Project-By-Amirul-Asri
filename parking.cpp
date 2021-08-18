@@ -1,6 +1,5 @@
 #include <iostream>
 #include <iomanip>
-#include <ctime>
 using namespace std;
 
 int main(){
@@ -9,12 +8,6 @@ int main(){
     double  timeEnter, timeExit, totalPayment;
     char carNo[100];
 
-    //GET CURRENT DATE
-    time_t tmNow;
-    tmNow = time(NULL);
-    struct tm t = *localtime(&tmNow);
-    date = to_string(t.tm_mday)+"/"+to_string(t.tm_mon+1)+"/"+to_string(t.tm_year+1900);
-
     //SET FOR 2 DECIMAL PLACE EVERY NUMBERS
     cout.setf(ios::fixed);
     cout.precision(2);
@@ -22,6 +15,10 @@ int main(){
     //GET CAR NUMBER WITH SPACE INPUT
     cout<<"ABC PRIVATE PARKING \nEnter your car number: ";
     cin.getline(carNo,sizeof(carNo));
+
+    //ENTER DATE BY USER
+    cout<<"\nEnter date (eg 10/5/2021): ";
+    cin>>date;
 
     //TIME ENTER INPUT
     cout<<"\nTime enter (eg 2.30) (12 Hour System): ";
