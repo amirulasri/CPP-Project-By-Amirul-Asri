@@ -8,10 +8,6 @@ int main(){
     double  timeEnter, timeExit, totalPayment;
     char carNo[100];
 
-    //SET FOR 2 DECIMAL PLACE EVERY NUMBERS
-    cout.setf(ios::fixed);
-    cout.precision(2);
-
     //GET CAR NUMBER WITH SPACE INPUT
     cout<<"ABC PRIVATE PARKING \nEnter your car number: ";
     cin.getline(carNo,sizeof(carNo));
@@ -20,6 +16,10 @@ int main(){
     cout<<"\nEnter date (eg 10/5/2021): ";
     cin>>date;
 
+    //SET FOR 2 DECIMAL PLACE EVERY NUMBERS
+    cout.setf(ios::fixed);
+    cout.precision(2);
+    
     //TIME ENTER INPUT
     cout<<"\nTime enter (eg 2.30) (12 Hour System): ";
     cin>>timeEnter;
