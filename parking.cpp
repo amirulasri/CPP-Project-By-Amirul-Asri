@@ -42,7 +42,7 @@ int main()
     }
     else
     {
-        cout << "\nWrong enter time format!. try again.";
+        cout << "\nWrong enter time format!. Try again.";
         exit(EXIT_SUCCESS);
     }
 
@@ -55,7 +55,7 @@ int main()
     {
         //DONT DO ANYTHING
     }else{
-        cout << "\nWrong exit time format!. try again.";
+        cout << "\nWrong exit time format!. Try again.";
         exit(EXIT_SUCCESS);
     }
 
