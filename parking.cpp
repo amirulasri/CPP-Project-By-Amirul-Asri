@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 using namespace std;
 
 int main()
@@ -81,7 +82,6 @@ int main()
 
     //DISPLAY RESULT
     cout << "---Your receipt---\n\n\n";
-
     cout << setw(30);
     cout << "ABC PRIVATE PARKING";
     cout << "\nCAR NUMBER: " << carNo;
