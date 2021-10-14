@@ -13,7 +13,17 @@
             "compilerPath": "C:\\msys64\\mingw64\\bin\\gcc.exe",
             "cStandard": "gnu17",
             "cppStandard": "gnu++14",
-            "intelliSenseMode": "windows-gcc-x64"
+            "intelliSenseMode": "windows-gcc-x64",
+            "browse": {
+                "path": [
+                    "C:\\Program Files\\MySQL\\MySQL Connector C++ 8.0\\include"
+                ]
+            },
+            "compilerArgs": [
+                "-lmysqlcppconn",
+                "-lmysqlcppconn-static"
+            ],
+            "forcedInclude": []
         }
     ],
     "version": 4
