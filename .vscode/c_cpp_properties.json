@@ -10,20 +10,10 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "C:\\msys64\\mingw64\\bin\\gcc.exe",
-            "cStandard": "gnu17",
-            "cppStandard": "gnu++14",
-            "intelliSenseMode": "windows-gcc-x64",
-            "browse": {
-                "path": [
-                    "C:\\Program Files\\MySQL\\MySQL Connector C++ 8.0\\include"
-                ]
-            },
-            "compilerArgs": [
-                "-lmysqlcppconn",
-                "-lmysqlcppconn-static"
-            ],
-            "forcedInclude": []
+            "compilerPath": "C:/msys64/mingw64/bin/gcc.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-clang-x64"
         }
     ],
     "version": 4
