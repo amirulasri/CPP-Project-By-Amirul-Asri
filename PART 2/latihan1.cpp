@@ -1,12 +1,14 @@
 #include <iostream>
 using namespace std;
 
+//FUNCTION FOR DISPLAY TOTAL WITH STAFF ACTIVITY
 void displayTotal(double totalfee, double activityfee){
     cout << "\n\n++++++++++++++++++\n";
     cout << "Total fee is RM" << totalfee - activityfee << " with " << "charge for staff activity (RM"<<activityfee<<") (10%) deducted from total fee.\n";
     cout << "++++++++++++++++++\n";
 }
 
+//FUNCTION FOR CALCULATE STAFF ACT
 double feeActivity(double totalfee){
     double activityfee = 0;
     if(totalfee > 2500){
@@ -17,6 +19,7 @@ double feeActivity(double totalfee){
     return activityfee;
 }
 
+//CALCULATE ALL FEE
 double calcTotalFee(int *arraystudentfee, int noofstudents){
     double totalfee = 0;
     for (int i=0; i<noofstudents; i++){
@@ -25,6 +28,7 @@ double calcTotalFee(int *arraystudentfee, int noofstudents){
     return totalfee;
 }
 
+//DISPLAY EVERY STUDENT FEE
 void displayMonthFee(int *arraystudentfee, int noofstudents){
     cout << "\nEach student fee displayed here: \n";
     for (int i=0; i<noofstudents; i++){
@@ -32,6 +36,7 @@ void displayMonthFee(int *arraystudentfee, int noofstudents){
     }
 }
 
+//SET FEE FOR EACH STUDENT
 int *setFee(int noofstudents){
     int *arraystudentfee = new int[noofstudents];
     int coursecode;
@@ -56,6 +61,7 @@ int *setFee(int noofstudents){
     return arraystudentfee;
 }
 
+//GET NUMBER OF STUDENT AND RETURN BACK TO MAIN
 int getNoOfStudent(){
     int noofstudents = 0;
     cout << "\nEnter number of student. At least 20: ";
@@ -67,10 +73,12 @@ int getNoOfStudent(){
     return noofstudents;
 }
 
+//DISPLAY MONTH NAME
 void displayMonth(string monthname){
     cout << "\nMonth entered: " << monthname;
 }
 
+//GET MONTH NAME ENTERED BY USER
 string getMonth(){
     string monthname;
     cout << "Enter month name: ";
@@ -78,13 +86,19 @@ string getMonth(){
     return monthname;
 }
 
+//MAIN FUNCTION
 int main(){
+    //DECLARE VARIABLES
     string monthname;
     int noofstudents = 0;
     int *arraystudentfee;
     double totalfee;
     double activityfee = 0;
-    cout << "Welcome\n";
+
+    //SHOW WELCOME MESSAGE
+    cout << "Welcome to Wana Training Center \nBy Group 12\n";
+
+    //CALL THE FUNCTION
     monthname = getMonth();
     displayMonth(monthname);
     noofstudents = getNoOfStudent();
