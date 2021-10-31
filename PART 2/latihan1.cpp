@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void displayFee(double totalfee, double activityfee){
+void displayTotal(double totalfee, double activityfee){
     cout << "\n\n++++++++++++++++++\n";
     cout << "Total fee is RM" << totalfee - activityfee << " with " << "charge for staff activity (RM"<<activityfee<<") (10%) deducted from total fee.\n";
     cout << "++++++++++++++++++\n";
@@ -92,5 +92,5 @@ int main(){
     displayMonthFee(arraystudentfee, noofstudents);
     totalfee = calcTotalFee(arraystudentfee, noofstudents);
     activityfee = feeActivity(totalfee);
-    displayFee(totalfee, activityfee);
+    displayTotal(totalfee, activityfee);
 }
