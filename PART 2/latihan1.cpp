@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
 //FUNCTION FOR DISPLAY TOTAL WITH STAFF ACTIVITY
