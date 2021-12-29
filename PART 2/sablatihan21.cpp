@@ -1,12 +1,12 @@
 #include <iostream>
 using namespace std;
-
+double totalAntarabangsa, totalTempatan;
 void nilaiTempatan(int &tnom, int &anom)
 {
     cout<<"Bilangan minit untuk panggilan tempatan:";
     cin>>tnom;
     cout<<"Bilangan minit untuk panggilan Antarabangsa:";
-     cin>>anom;
+    cin>>anom;
 }
 
 
@@ -14,20 +14,26 @@ void nilaiTempatan(int &tnom, int &anom)
 void jumlahTempatan(int &tnom)
 {
     double m1,m2,m3;
+    
     if(tnom<=100)
     {
         m1 = tnom* 0.10;
-        cout<<"Jumlah panggilan tempatan :"<<m1<<endl;
+        totalTempatan =m1;
+        cout<<"Jumlah panggilan tempatan :"<<totalTempatan<<endl;
     }
-    else if(tnom>100 && tnom<200)
+    else if( tnom<=200)
     {
-        m2 = tnom* 0.09;
-        cout<<"Jumlah panggilan tempatan :"<<m2<<endl;
+        m1 = 100 * 0.10;
+        m2 =(tnom - 100)*0.09;
+        totalTempatan = m1 + m2;
+        cout<<"Jumlah panggilan tempatan :"<<totalTempatan<<endl;
     }
-    else
-    {
-        m3= tnom* 0.08;
-         cout<<"Jumlah panggilan tempatan :"<<m3<<endl;
+    else if (tnom>200)
+    {   m1 = 100 * 0.10;
+        m2 = 100 * 0.09;
+        m3= (tnom - 200)*0.08;
+        totalTempatan = (m1 + m2 +m3);
+        cout<<"Jumlah panggilan tempatan :"<<totalTempatan<<endl;
     }
     
 }
@@ -38,31 +44,38 @@ void jumlahAntarabangsa(int &anom)
     if(anom<=200)
     {
         m4 = anom* 0.30;
+        totalAntarabangsa = m4;
         cout<<"Jumlah panggilan antarabangsa:"<<m4<<endl;
     }
-    else if(anom>100 && anom<200)
+    else if(anom>=200 && anom<299)
     {
-        m5 = anom* 0.28;
-        cout<<"Jumlah panggilan antarabangsa:"<<m5<<endl;
+        m4 = 200 * 0.30;
+        m5 = (anom - 200)* 0.28;
+        totalAntarabangsa = m4 + m5;
+        cout<<"Jumlah panggilan antarabangsa:"<<totalAntarabangsa<<endl;
     }
-    else
+    else if(anom>299)
     {
-        m6= anom* 0.25;
-         cout<<"Jumlah panggilan antarabangsa:"<<m6<<endl;
+        m4 = 200 * 0.30;
+        m5 = 100 * 0.28;
+        m6 =( anom - 300 )*0.25;
+        totalAntarabangsa = m4 + m5 + m6;
+        cout<<"Jumlah panggilan antarabangsa:"<<totalAntarabangsa<<endl;
     }
     
 }
 
-void jumlahKeseluruhan(double tnom, double anom)
+void jumlahKeseluruhan()
 {
-    double jumlah = tnom + anom;
+    double jumlah = totalAntarabangsa + totalTempatan;
+    cout<<"jumlah keseluruhan:"<<jumlah;
 }
 
 int main()
 {
-    int tnom,anom;
+    int tnom,anom,jumlah,totalAntarabangsa,totalTempatan;
     nilaiTempatan(tnom,anom);
     jumlahTempatan(tnom);
     jumlahAntarabangsa(anom);
-    jumlahKeseluruhan(tnom, anom);
+    jumlahKeseluruhan();
 }
