@@ -5,43 +5,34 @@ int nombormaksimum = 4;
 
 void masuknilai(int &num)
 {
-    cout << "masukkan nombor:";
+    cout << "Masukkan nombor integer ( maksimum " << nombormaksimum << " nombor):";
     cin >> num;
-
-    string stringbilangannombor = to_string(num);
-    int bilangannombor = stringbilangannombor.length();
-
-    bool keadaanloop = true;
-    while (keadaanloop)
-    {
-        if (bilangannombor > 4)
-        {
-            cout << "\nNombor yang anda masukkan melebihi 4 digit. Masukkan semula";
-            cout << "\nmasukkan nombor:";
-            cin >> num;
-
-            stringbilangannombor = to_string(num);
-            bilangannombor = stringbilangannombor.length();
-        }
-        else
-        {
-            keadaanloop = false;
-        }
-    }
 }
 
 void nilaiPositif2(int &num)
 {
-    int x, y, z;
     bool keadaanloop = true;
     while (keadaanloop)
     {
-        if (num >= 1 && num <= 1000)
-        {
-            cout << "\nNombor yang anda masuk kurang 4 digit. Masukkan semula";
-            cout << "\nmasukkan nombor:";
+        if(num < 0){
+            cout << "Nombor yang anda masuk adalah negatif. masukkan semula";
+            cout << "\nMasukkan semula: ";
             cin >> num;
-        }else{
+        }
+        else if (num < 1000)
+        {
+            cout << "Nombor yang anda masuk kurang 4 digit. masukkan semula";
+            cout << "\nMasukkan semula: ";
+            cin >> num;
+        }
+        else if (num > 9999)
+        {
+            cout << "Nombor yang anda masukkan melebihi 4 digit.";
+            cout << "\nMasukkan semula: ";
+            cin >> num;
+        }
+        else
+        {
             keadaanloop = false;
         }
     }
