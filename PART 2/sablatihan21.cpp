@@ -7,6 +7,10 @@ void nilaiTempatan(int &tnom, int &anom)
     cin>>tnom;
     cout<<"Bilangan minit untuk panggilan Antarabangsa:";
     cin>>anom;
+    if(tnom < 0 || anom < 0){
+        cout << "Nilai yang anda masukkan negatif";
+        exit(EXIT_FAILURE);
+    }
 }
 
 
@@ -14,7 +18,6 @@ void nilaiTempatan(int &tnom, int &anom)
 void jumlahTempatan(int &tnom)
 {
     double m1,m2,m3;
-    
     if(tnom<=100)
     {
         m1 = tnom* 0.10;
