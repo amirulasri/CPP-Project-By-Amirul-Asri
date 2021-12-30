@@ -13,8 +13,6 @@ void nilaiTempatan(int &tnom, int &anom)
     }
 }
 
-
-
 void jumlahTempatan(int &tnom)
 {
     double m1,m2,m3;
