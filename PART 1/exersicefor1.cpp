@@ -5,7 +5,7 @@ int main()
 {
     int nombor = 100;
 
-    //WHILE
+    //WHILE CHECK ODD EVEN NUMBERS
     while (nombor <= 200){
         if ((nombor % 2) != 0)
         {
