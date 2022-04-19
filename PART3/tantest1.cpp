@@ -8,7 +8,10 @@ protected:
     float total_marks, gpa;
 
 public:
-    Subject() : name(""), assess_no(0) {}
+    Subject(string names, int access_nos) {
+        name = names;
+        assess_no = access_nos;
+    }
     virtual void calcTotal() = 0; //ADD METHOD BRACKETS
     float getGPA()
     {
@@ -36,6 +39,7 @@ public:
     //REMOVE ParallelProcess
 };
 
+//CHANGE TO PUBLIC
 class ParallelProcess : public Subject
 {
     //ADD MISSING VARIABLE
@@ -43,7 +47,7 @@ class ParallelProcess : public Subject
     float assign_marks, labtest_marks, midterm_marks, final_marks;
 
 public:
-    ParallelProcess() : assign_no(1),
+    ParallelProcess() : Subject("Parallel Process",4), assign_no(1),
                         labtest_no(1), assign_marks(.0), labtest_marks(.0),
                         midterm_marks(.0), final_marks(.0) {}
     void setAssess()
@@ -83,7 +87,7 @@ class CyberEthics : public Subject
     float quiz_marks, assign_marks, midterm_marks, final_marks;
 
 public:
-    CyberEthics() : quiz_no(1),
+    CyberEthics() : Subject("Cyber Ethics", 4), quiz_no(1),
                     quiz_marks(.0), assign_marks(.0), midterm_marks(.0),
                     final_marks(.0) {}
     void setAssess()
