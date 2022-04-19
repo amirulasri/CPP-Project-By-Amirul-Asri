@@ -3,7 +3,7 @@ using namespace std;
 class Subject
 {
 protected:
-    const string name;
+    string name;
     int assess_no;
     float total_marks, gpa;
 
@@ -36,14 +36,14 @@ public:
     //REMOVE ParallelProcess
 };
 
-class ParallelProcess : private Subject
+class ParallelProcess : public Subject
 {
     //ADD MISSING VARIABLE
     int assign_no, labtest_no;
     float assign_marks, labtest_marks, midterm_marks, final_marks;
 
 public:
-    ParallelProcess() : Subject("Parallel Process", 4), assign_no(1),
+    ParallelProcess() : assign_no(1),
                         labtest_no(1), assign_marks(.0), labtest_marks(.0),
                         midterm_marks(.0), final_marks(.0) {}
     void setAssess()
@@ -76,14 +76,14 @@ public:
 };
 
 //EXTENDS TO SUBJECT
-class CyberEthics : private Subject
+class CyberEthics : public Subject
 {
     //ADD MISSING VARIABLE
     int quiz_no, access_no;
     float quiz_marks, assign_marks, midterm_marks, final_marks;
 
 public:
-    CyberEthics() : Subject("Cyber Ethics", 4), quiz_no(1),
+    CyberEthics() : quiz_no(1),
                     quiz_marks(.0), assign_marks(.0), midterm_marks(.0),
                     final_marks(.0) {}
     void setAssess()
@@ -116,7 +116,9 @@ public:
 void displayGPA(ParallelProcess s)
 {
     cout << "------------------------------\n";
-    cout << "Total Subject Marks: " << s.calcTotal << endl;
+    cout << "Total Subject Marks: ";
+    s.calcTotal();
+    cout << endl;
     cout << "Subject GPA: " << s.getGPA() << endl;
     cout << "------------------------------\n\n";
 }
@@ -132,5 +134,5 @@ int main()
     displayGPA(pp);
     ce.setMarks();
     ce.getGPA();
-    displayGPA(ce);
+    displayGPA(pp);
 }
