@@ -3,13 +3,13 @@ using namespace std;
 class Subject
 {
 protected:
-    string name;
+    const string name;
     int assess_no;
     float total_marks, gpa;
 
 public:
     Subject() : name(""), assess_no(0) {}
-    virtual void calcTotal = 0;
+    virtual void calcTotal() = 0; //ADD METHOD BRACKETS
     float getGPA()
     {
         calcTotal();
@@ -25,17 +25,21 @@ public:
             gpa = 1.0;
         else
             gpa = 0.0;
+        
+        return gpa;
     }
     void showName()
     {
         cout << "Subject Name: " << name << endl;
     }
-    void displayGPA(ParallelProcess);
+    void displayGPA();
+    //REMOVE ParallelProcess
 };
 
 class ParallelProcess : private Subject
 {
-    int assign_no;
+    //ADD MISSING VARIABLE
+    int assign_no, labtest_no;
     float assign_marks, labtest_marks, midterm_marks, final_marks;
 
 public:
@@ -71,9 +75,11 @@ public:
     }
 };
 
-class CyberEthics
+//EXTENDS TO SUBJECT
+class CyberEthics : private Subject
 {
-    int quiz_no;
+    //ADD MISSING VARIABLE
+    int quiz_no, access_no;
     float quiz_marks, assign_marks, midterm_marks, final_marks;
 
 public:
@@ -110,8 +116,8 @@ public:
 void displayGPA(ParallelProcess s)
 {
     cout << "------------------------------\n";
-    cout << "Total Subject Marks: " << total_marks.s << endl;
-    cout << "Subject GPA: " << gpa.s << endl;
+    cout << "Total Subject Marks: " << s.calcTotal << endl;
+    cout << "Subject GPA: " << s.getGPA() << endl;
     cout << "------------------------------\n\n";
 }
 int main()
