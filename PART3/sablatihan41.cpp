@@ -9,7 +9,7 @@ int main(){
         {
             cout << "Ulangan j: " << j << endl;
         }
-        
+        cout << endl;
     }
     
 }
